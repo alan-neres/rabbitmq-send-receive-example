@@ -1,7 +1,0 @@
-apiVersion: v1
-data:
-  RMQ_URL: amqp://guest:guest@192.168.5.15:5672/
-kind: ConfigMap
-metadata:
-  name: config-rabbitmq
-  namespace: default
