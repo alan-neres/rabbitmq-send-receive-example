@@ -1,0 +1,15 @@
+labs:
+  namespace: lab-rabbitmq-go
+
+  deployment:
+    name: rabbitmq-go-consumer
+    replicas: 1
+    image: aneresdevops/producer-rabbitmq:1.4
+    repository: aneresdevops/producer-rabbitmq
+    tag: 1.4
+
+  configmaps: 
+    name: rabbitmq-cm
+    data:
+      RMQ_URL: amqp://guest:guest@192.168.5.15:5672/
+    
