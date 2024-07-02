@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  RMQ_URL: amqp://guest:guest@192.168.5.15:5672/
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-07-01T19:51:49Z"
+  name: config-rabbitmq
+  namespace: default
+  resourceVersion: "1050372"
+  uid: cfed5dcf-bcf4-43fc-8984-2b0e789bf6ff
