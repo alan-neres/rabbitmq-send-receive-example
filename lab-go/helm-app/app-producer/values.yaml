@@ -6,6 +6,7 @@ labs:
     replicas: 2
     repository: aneresdevops/consumer-rabbitmq
     tag: 1.4
+    port: 80
 
   configmaps: 
     name: rabbitmq-config
