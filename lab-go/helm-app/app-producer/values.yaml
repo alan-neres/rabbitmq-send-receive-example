@@ -4,7 +4,7 @@ labs:
   deployment:
     name: rabbitmq-go-producer
     replicas: 2
-    repository: aneresdevops/consumer-rabbitmq
+    repository: aneresdevops/producer-rabbitmq
     tag: 1.4
     port: 80
 
