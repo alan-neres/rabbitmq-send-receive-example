@@ -6,18 +6,21 @@ metadata:
   labels:
     app: {{ .Values.deployment.name }}
 spec:
-    replicas: {{ .Values.deployment.replicas }}
-    selector:
-      matchLabels:
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.deployment.name }}
+  template:
+    metadata:
+      labels:
         app: {{ .Values.deployment.name }}
-    template:
-      spec:
-        containers:
-        - name: {{ .Values.deployment.name }}
-          image: "{{ .Values.deployment.repository }}:{{ .Values.deployment.tag}}"
-          ports:
-          - containerPort: {{ .Values.deployment.port }}
-          envFrom:
-            - configMapRef:
-                name: {{ .Values.configmaps.name }}
+    spec:
+      containers:
+      - name: {{ .Values.deployment.name }}
+        image: "{{ .Values.deployment.repository }}:{{ .Values.deployment.tag}}"
+        ports:
+        - containerPort: {{ .Values.deployment.port }}
+        envFrom:
+          - configMapRef:
+              name: {{ .Values.configmaps.name }}
 
