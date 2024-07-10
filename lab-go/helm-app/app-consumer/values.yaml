@@ -3,13 +3,13 @@ labs:
 
   deployment:
     name: rabbitmq-go-consumer
-    replicas: 1
-    image: aneresdevops/producer-rabbitmq:1.4
-    repository: aneresdevops/producer-rabbitmq
+    replicas: 2
+    repository: aneresdevops/consumer-rabbitmq
     tag: 1.4
+    port: 80
 
   configmaps: 
-    name: rabbitmq-cm
+    name: rabbitmq-config
     data:
       RMQ_URL: amqp://guest:guest@192.168.5.15:5672/
     
