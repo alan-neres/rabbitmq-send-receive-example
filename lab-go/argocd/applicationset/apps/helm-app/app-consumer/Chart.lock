@@ -1,0 +1,6 @@
+dependencies:
+- name: labs
+  repository: file://../charts/labs
+  version: 0.1.0
+digest: sha256:0414d29cbdd4f4c9037ca4748ddd4e3fd31373498f48356cdd46fe7b3df81cdd
+generated: "2024-07-02T16:54:10.698611-03:00"
