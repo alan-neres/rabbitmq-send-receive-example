@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: appSet-lab
+  namespace: argocd
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/alan-neres/rabbitmq-send-receive-example.git 
+        revision: HEAD
+        files:
+        - path: lab-go/argocd/applicationset/apps/*/*/config.json
+  template:
+    metadata:
+      name: '{{.path[1]}}-{{path.basename}}'
+    spec:
+      project: "default"
+      source: 
+        repoURL: '{{source.repo}}'
+        path: '{{source.path}}'
+        targetRevision: HEAD
+        helm:
+          valueFiles:
+          - '{{source.values}}'
+      syncPolicy:
+        automated:
+          selfHeal: true
+          prune: false
+          allowEmpty: false
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{destination.namespace}}'
