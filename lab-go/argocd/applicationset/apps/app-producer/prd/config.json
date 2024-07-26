@@ -1,0 +1,12 @@
+{
+    "source": {
+        "repo": "https://github.com/alan-neres/rabbitmq-send-receive-example.git",
+        "path": "lab-go/helm-app/app-producer",
+        "values": "values.yaml"
+    },
+    "destination": {
+        "namespace": "lab-rabbitmq-go"
+    }
+    },
+
+}
