@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: appSet-lab
+  name: appset-lab
   namespace: argocd
 spec:
   generators:
@@ -12,7 +12,7 @@ spec:
         - path: lab-go/argocd/applicationset/apps/*/*/config.json
   template:
     metadata:
-      name: '{{.path[1]}}-{{path.basename}}'
+      name: '{{path[4]}}-{{path.basename}}'
     spec:
       project: "default"
       source: 
