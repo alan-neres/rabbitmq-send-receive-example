@@ -5,13 +5,15 @@ metadata:
   namespace: argocd
 spec:
   goTemplate: true
-  goTemplateOptions: ["missinkey=error"]
+  goTemplateOptions: ["missingkey=error"]
   generators:
   - git:
       repoURL: https://github.com/alan-neres/rabbitmq-send-receive-example.git
-      revision: main
+      revision: HEAD
       directories:
       - path: lab-go/argocd/applicationset/apps/helm-app/*
+      - path: lab-go/argocd/applicationset/apps/helm-app/charts
+        exclude: true
   template:
     metadata:
       name: '{{index .path.segments 5}}'
@@ -19,7 +21,7 @@ spec:
       project: "default"
       source:
         repoURL: https://github.com/alan-neres/rabbitmq-send-receive-example.git
-        targetRevision: main
+        targetRevision: HEAD
         path: '{{.path.path}}'
       destination:
         server: https://kubernetes.default.svc
