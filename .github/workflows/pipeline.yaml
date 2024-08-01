@@ -20,7 +20,7 @@ jobs:
           echo "image_name=aneresdevops/producer-rabbitmq" >> $GITHUB_ENV
           image_tag=$(git rev-parse --short HEAD)
           echo TAG=$image_tag >> $GITHUB_OUTPUT
-        echo aneresdevops/producer-rabbitmq:$image_tag
+          echo aneresdevops/producer-rabbitmq:$image_tag
 
       - name: Log in to Docker Hub
         uses: docker/build-push-action@v2
