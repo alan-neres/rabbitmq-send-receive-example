@@ -47,7 +47,7 @@ jobs:
         env:
           IMAGE_TAG: ${{ needs.push_to_registry.outputs.TAG }}
         run: |
-          sed -i 's|{{ image_tag }}|${{ env.IMAGE_TAG }}|g' lab-go/go-app/producer/k8s/deployment.yaml
+          sed -i 's|{{ image_tag }}|${{ env.IMAGE_TAG }}|g' lab-go/helm-app/app-producer/values.yaml
         
       - name: Commit and push changes
         run: |
