@@ -35,4 +35,6 @@ jobs:
           push: true
           tags: aneresdevops/producer-rabbitmq:${{ env.image_version }}
 
+          ##
+
 
