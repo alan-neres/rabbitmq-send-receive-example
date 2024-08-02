@@ -5,7 +5,7 @@ labs:
     name: rabbitmq-go-producer
     replicas: 2
     repository: aneresdevops/producer-rabbitmq
-    tag: {{ image_tag }}
+    tag: f741775
     port: 80
 
   configmaps: 
