@@ -11,5 +11,5 @@ labs:
   configmaps: 
     name: rabbitmq-config
     data:
-      RMQ_URL: amqp://guest:guest@192.168.5.15:5672/
+      RMQ_URL: amqp://guest:guest@production-rabbitmqcluster.rabbitmq-server.svc.cluster.local:5672/
     
