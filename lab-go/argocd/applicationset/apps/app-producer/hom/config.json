@@ -5,7 +5,7 @@
         "values": "values.yaml"
     },
     "destination": {
-        "namespace": "lab-rabbitmq-go"
+        "namespace": "lab-rabbitmq-go-hom"
     }
     },
 
