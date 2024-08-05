@@ -7,6 +7,6 @@
     "destination": {
         "namespace": "lab-rabbitmq-go"
     }
-    },
+    
 
 }
